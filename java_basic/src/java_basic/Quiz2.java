@@ -6,43 +6,62 @@ public class Quiz2 {
 
 	public static void main(String[] args) {
 		
-		Scanner scann = new Scanner(System.in);
+		int computer = (int)(Math.random()*3);
+		String com_kwb = ""; // 가위 0, 바위 1, 보 2
 		
-		double computer = (int)(Math.random()*3);
 		int player = 0;
-		String computerString = " ";
-		String playerString = " ";
+		String player_kwb = ""; // 가위 0, 바위 1, 보 2
+		
+		int menu = 0;
+		String juge = "";
 		
 		System.out.println("컴퓨터는 결정했습니다.");
 		System.out.println("당신의 선택은?");
 		System.out.println("1.가위 2.바위 3.보");
 		System.out.print("선택: ");
-		player = scann.nextInt() - 1;
 		
-		if (computer == 0) {
-			computerString = "가위";
-		}
-		if (computer == 1) {
-			computerString = "바위";
-		}
-		if (computer == 2) {
-			computerString = "보";
-		}
+		Scanner scann = new Scanner(System.in);
+		menu = scann.nextInt();
+		player = menu - 1;
 		
-		if (player == 0) {
-			playerString = "가위";
-		}
-		if (player == 1) {
-			playerString = "바위";
-		}
-		if (player == 2) {
-			playerString = "보";
+		if (computer == ((player+1)%3)) { //졌어요
+			juge = "졌어요";
+		} else {
+			if (computer == player) { //비겼어요
+				juge = "비겼어요";
+			} else { //이겼어요
+				juge = "이겼어요";
+			}
 		}
 		
-		System.out.println("컴퓨터 : " + computerString);
-		System.out.println("당신 : " + playerString);
+		switch (player) {
+		case 0:
+			player_kwb = "가위";
+			break;
+		case 1:
+			player_kwb = "바위";
+			break;
+		case 2:
+			player_kwb = "보";
+			break;
+		}
 		
+		switch (computer) {
+		case 0:
+			com_kwb = "가위";
+			break;
+		case 1:
+			com_kwb = "바위";
+			break;
+		case 2:
+			com_kwb = "보";
+			break;
+		}
 		
+		System.out.println("컴퓨터 : " + com_kwb);
+		System.out.println("당신 : " + player_kwb);
+		
+		System.out.println(juge);
 		
 	}
 
