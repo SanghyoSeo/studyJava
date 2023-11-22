@@ -15,6 +15,7 @@ public class SubjectScore {
 		
 		int total = 0;
 		float avg = 0f;
+		char grade = 'F';
 		
 		System.out.print("국어점수 입력 : ");
 		kor = scann.nextInt();
@@ -32,8 +33,14 @@ public class SubjectScore {
 		avg = total / 4f;
 		avg = (int)((avg*100+5)/10) / 10f;
 		
-		System.out.println("국어\t영어\t수학\t과학\t총점\t평균");
-		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f",kor, eng, math, scien, total, avg);
+		if(avg<60) {grade = 'F';}
+		if(avg>=60) {grade = 'D';}
+		if(avg>=70) {grade = 'C';}
+		if(avg>=80) {grade = 'B';}
+		if(avg>=90) {grade = 'A';}
+		
+		System.out.println("국어\t영어\t수학\t과학\t총점\t평균\t\t등급");
+		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f\t%c",kor, eng, math, scien, total, avg, grade);
 
 	}
 
