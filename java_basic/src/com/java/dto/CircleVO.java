@@ -9,15 +9,18 @@ public class CircleVO {
 	
 	public void input() {
 		Scanner scann = new Scanner(System.in);
+		
+		System.out.println("ë°˜ì§€ë¦„ : ");
+		r = scann.nextInt();scann.nextLine();
 	}
 	
 	public void output() {
-		System.out.println("³ĞÀÌ");
+		System.out.println("ì›ì˜ ë„“ì´ : ");
 	}
 	
 	public void printArea() {
-		area = r * r * (float)Math.PI;
-		System.out.println("");
+		area = (int)((r * r * Math.PI * 1000 + 5) / 10) / 100f;
+		System.out.println(area);
 	}
 
 }

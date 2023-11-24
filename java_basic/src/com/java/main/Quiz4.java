@@ -14,29 +14,34 @@ public class Quiz4 {
 		
 		int choice = 0;
 		
-		System.out.println("³ÐÀÌ¸¦ ±¸ÇÒ µµÇüÀ» ¼±ÅÃÇÏ½Ã¿À.");
-		System.out.println("1.»ï°¢Çü 2.»ç°¢Çü 3.¿ø 4.Á¾·á");
-		
 		while (choice != 4) {
+			System.out.println("ë„“ì´ë¥¼ êµ¬í•  ë„í˜•ì„ ì„ íƒí•˜ì‹œì˜¤.");
+			System.out.println("1.ì‚¼ê°í˜• 2.ì‚¬ê°í˜• 3.ì› 4.ì¢…ë£Œ");
+			System.out.print("ìž…ë ¥ >> ");
+			choice = scann.nextInt();scann.nextLine();
 			
 			switch (choice) {
 			case 1:
 				TriangleVO triangle = new TriangleVO();
 				triangle.input();
 				triangle.output();
+				triangle.printArea();
 				break;
 			case 2:
 				RectangleVO rect = new RectangleVO();
 				rect.input();
 				rect.output();
-				
+				rect.printArea();
 				break;
 			case 3:
 				CircleVO circle = new CircleVO();
 				circle.input();
 				circle.output();
+				circle.printArea();
 				break;
 			}
+			
+			System.out.println();
 		
 		}
 		

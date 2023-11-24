@@ -10,10 +10,16 @@ public class RectangleVO {
 	
 	public void input() {
 		Scanner scann = new Scanner(System.in);
+		
+		System.out.print("밑변 : ");
+		width = scann.nextInt();scann.nextLine();
+		
+		System.out.print("높이 : ");
+		height = scann.nextInt();scann.nextLine();
 	}
 	
 	public void output() {
-		System.out.println("����");
+		System.out.print("사각형의 넓이 : ");
 	}
 	
 	public void printArea() {

@@ -11,20 +11,20 @@ public class TriangleVO {
 	public void input() {
 		Scanner scann = new Scanner(System.in);
 		
-		System.out.print("¹Øº¯ : ");
+		System.out.print("ë°‘ë³€ : ");
 		width = scann.nextInt();scann.nextLine();
 		
-		System.out.print("³ôÀÌ : ");scann.nextLine();
-		height = scann.nextInt();
+		System.out.print("ë†’ì´ : ");
+		height = scann.nextInt();scann.nextLine();
 	}
 	
 	public void output() {
-		System.out.println("³ĞÀÌ");
+		System.out.print("ì‚¼ê°í˜•ì˜ ë„“ì´ : ");
 	}
 	
 	public void printArea() {
 		area = width * height * 0.5f;
-		System.out.println();
+		System.out.println(area);
 	}
 
 }
