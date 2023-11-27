@@ -39,11 +39,19 @@ public class Quiz4 {
 				circle.output();
 				circle.printArea();
 				break;
+			default:
+				System.out.println("올바른 입력이 아닙니다.");
 			}
 			
 			System.out.println();
 		
 		}
+//		정의: class, 형태: 필드 멤버변수, 기능: 메소드 함수
+//		class 파일명과 동일, 첫글자 대문자
+//		필드: 변수문법: 자동초기화(묵시적 초기화)
+//		선언위치: 지역/전역
+//		메소드: 리턴타입(주는거, 파라미터 타입(받는거) 함수 입장 선언적
+//		 ㄴ 생성자: 인스턴스를 만들기 위한 , 리턴타입x, 파라미터 타입
 		
 
 	}

@@ -21,24 +21,24 @@ public class ScoreVO {
 	public void input() {
 		Scanner scann = new Scanner(System.in);
 		
-		System.out.println("ÀÌ¸§ : ");
+		System.out.println("ì´ë¦„ : ");
 		name = scann.nextLine();
 		
-		System.out.print("±¹¾î : ");
+		System.out.print("êµ­ì–´ : ");
 		kor = scann.nextInt();scann.nextLine();
 		
-		System.out.print("¿µ¾î : ");
+		System.out.print("ì˜ì–´ : ");
 		eng = scann.nextInt();scann.nextLine();
 		
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		math = scann.nextInt();scann.nextLine();
 		
-		System.out.print("°úÇĞ : ");
+		System.out.print("ê³¼í•™ : ");
 		scien = scann.nextInt();scann.nextLine();
 	}
 	
 	public static void printLabel() {
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\t°úÇĞ\tÃÑÁ¡\tÆò±Õ");
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tê³¼í•™\tì´ì \tí‰ê· ");
 	}
 	
 	public void printScore() {
