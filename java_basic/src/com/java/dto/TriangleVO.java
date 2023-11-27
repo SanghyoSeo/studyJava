@@ -4,10 +4,34 @@ import java.util.Scanner;
 
 public class TriangleVO {
 	
-	int width = 0;
-	int height = 0;
-	float area = 0f;
+//	명시적 초기화
+	public int width = 100;
+	public int height = 10;
 	
+	{
+		int random = (int)(Math.random()*11);
+		
+		if (random % 2 == 0) {
+			height = 0;
+			width = 0;
+		} else {
+			height = 1;
+			width = 1;
+		}
+	}
+	
+	public TriangleVO() {
+		
+	}
+	
+//	overloding
+//	생성자 초기화
+	public TriangleVO(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+
 	public void input() {
 		Scanner scann = new Scanner(System.in);
 		

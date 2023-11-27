@@ -39,6 +39,9 @@ public class Quiz4 {
 				circle.output();
 				circle.printArea();
 				break;
+			case 4:
+				System.out.println("종료합니다.");
+				break;
 			default:
 				System.out.println("올바른 입력이 아닙니다.");
 			}
