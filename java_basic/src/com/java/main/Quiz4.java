@@ -3,7 +3,7 @@ package com.java.main;
 import java.util.Scanner;
 
 import com.java.dto.CircleVO;
-import com.java.dto.RectangleVO;
+import com.java.dto.RectangularVO;
 import com.java.dto.TriangleVO;
 
 public class Quiz4 {
@@ -23,21 +23,12 @@ public class Quiz4 {
 			switch (choice) {
 			case 1:
 				TriangleVO triangle = new TriangleVO();
-				triangle.input();
-				triangle.output();
-				triangle.printArea();
 				break;
 			case 2:
-				RectangleVO rect = new RectangleVO();
-				rect.input();
-				rect.output();
-				rect.printArea();
+				RectangularVO rect = new RectangularVO();
 				break;
 			case 3:
 				CircleVO circle = new CircleVO();
-				circle.input();
-				circle.output();
-				circle.printArea();
 				break;
 			case 4:
 				System.out.println("종료합니다.");
