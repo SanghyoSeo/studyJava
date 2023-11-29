@@ -2,7 +2,11 @@ package com.java.dto;
 
 import java.util.Scanner;
 
-public class TriangleVO extends Shape {
+import com.java.ifc.Inputable;
+import com.java.ifc.Outputable;
+
+public class TriangleVO extends Shape 
+						implements Inputable, Outputable {
 	
 //	명시적 초기화
 	private int width = 100;
@@ -48,8 +52,6 @@ public class TriangleVO extends Shape {
 		return (int)(width * height * 0.5f);
 	}
 	
-	
-
 	public int getWidth() {
 		return width;
 	}
@@ -67,7 +69,7 @@ public class TriangleVO extends Shape {
 	}
 
 	@Override
-	public void inputData() {
+	public void input() {
 		Scanner scann = new Scanner(System.in);
 		
 		System.out.print("밑변 : ");
@@ -79,7 +81,7 @@ public class TriangleVO extends Shape {
 	}
 
 	@Override
-	public String outputMessage() {
+	public String output() {
 		return "삼각형 넓이";
 	}
 	

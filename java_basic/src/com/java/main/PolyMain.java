@@ -1,7 +1,7 @@
-package com.java.solution;
+package com.java.main;
 
 import com.java.dto.Shape;
-import com.java.main.SurfaceSolution;
+import com.java.solution.SurfaceSolution;
 
 public class PolyMain {
 

@@ -2,7 +2,11 @@ package com.java.dto;
 
 import java.util.Scanner;
 
-public class RectangularVO extends Shape {
+import com.java.ifc.Inputable;
+import com.java.ifc.Outputable;
+
+public class RectangularVO extends Shape 
+							implements Inputable, Outputable{
 	
 	private int garo;
 	private int sero;
@@ -37,7 +41,7 @@ public class RectangularVO extends Shape {
 	}
 
 	@Override
-	public void inputData() {
+	public void input() {
 		Scanner scann = new Scanner(System.in);
 		
 		System.out.print("가로 : ");
@@ -49,7 +53,7 @@ public class RectangularVO extends Shape {
 	}
 
 	@Override
-	public String outputMessage() {
+	public String output() {
 		return "사각형 넓이";
 	}
 	
