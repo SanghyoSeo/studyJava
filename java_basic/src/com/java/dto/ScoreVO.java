@@ -1,6 +1,9 @@
 package com.java.dto;
 
 import java.util.Scanner;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class ScoreVO implements Comparable<ScoreVO> {
 	
@@ -9,7 +12,14 @@ public class ScoreVO implements Comparable<ScoreVO> {
 	private int eng;
 	private int math;
 	private int scien;
+	private Date date = new Date();
+	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private String dateStr = format.format(date);
 	
+	public String getDateStr() {
+		return dateStr;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -56,6 +66,7 @@ public class ScoreVO implements Comparable<ScoreVO> {
 		System.out.print("과학 : ");
 		scien = scann.nextInt();scann.nextLine();
 		
+		
 		//날짜 받아서 정렬
 		//로또 랜덤숫자 set으로 저장 6개 받기 set.size
 		
@@ -66,13 +77,19 @@ public class ScoreVO implements Comparable<ScoreVO> {
 	}
 	
 	public void printScore() {
-		System.out.println(name + "\t" + kor + "\t" + eng + "\t" + math + "\t" + scien 
-				+ "\t" + total() + "\t" + evg());
+		try {
+			Date theDay = format.parse(dateStr);
+			System.out.println(name + "\t" + kor + "\t" + eng + "\t" + math + "\t" + scien 
+					+ "\t" + total() + "\t" + evg() + "\t" + theDay);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override
 	public int compareTo(ScoreVO other) {
-		return this.name.compareTo(other.getName());
+		return this.dateStr.compareTo(other.getDateStr());
 	}
 	// string 컴퍼러블은 이미 만들어져있다.
 }
