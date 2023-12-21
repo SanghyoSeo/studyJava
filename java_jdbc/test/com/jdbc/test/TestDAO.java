@@ -14,7 +14,7 @@ import com.jdbc.dto.고객VO;
 import com.jdbc.dto.제품VO;
 import com.jdbc.dto.주문VO;
 
-public class TesDAO {
+public class TestDAO {
 	
 	private DataSource dataSource;
 	private 고객DAO 고객dao = new 고객DAO();
