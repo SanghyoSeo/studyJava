@@ -13,6 +13,9 @@ import com.jdbc.dto.고객VO;
 public class 고객DAO implements DAO<고객VO> {
 
 	private DataSource dataSource = DataSource.getInstance();
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 	
 	@Override
 	public List<고객VO> selectList() throws Exception {
@@ -108,9 +111,14 @@ public class 고객DAO implements DAO<고객VO> {
 	@Override
 	public void delete(String id) throws Exception {
 		Connection conn = dataSource.getConnection();
-		String sql = "delete from 고객 "
-				+ "";
+		String sql = "delete from 고객 where 고객아이디='" + id + "'";
 		
+		Statement stmt = conn.createStatement();
+		
+		stmt.executeUpdate(sql);
+		
+		if(stmt != null)stmt.close();
+		if(conn != null)conn.close();
 		
 	}
 	

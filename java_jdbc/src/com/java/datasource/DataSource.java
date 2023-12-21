@@ -7,7 +7,7 @@ public class DataSource {
 	
 	// 인스턴스를 하나만 만들 수 있게 하는 싱글톤 패턴
 	private static DataSource instance = new DataSource();
-	private DataSource() {}
+//	private DataSource() {}
 	public static DataSource getInstance() {
 		return instance;
 	}

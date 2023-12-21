@@ -13,6 +13,9 @@ import com.jdbc.dto.제품VO;
 public class 제품DAO implements DAO<제품VO> {
 	
 	private DataSource dataSource = DataSource.getInstance();
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 
 	@Override
 	public List<제품VO> selectList() throws Exception {
@@ -101,6 +104,14 @@ public class 제품DAO implements DAO<제품VO> {
 
 	@Override
 	public void delete(String id) throws Exception {
+		Connection conn = dataSource.getConnection();
+		String sql = "delete from 제품 where 제품번호='" + id + "'";
+		Statement stmt = conn.createStatement();
+		
+		stmt.executeUpdate(sql);
+		
+		if(stmt != null)stmt.close();
+		if(conn != null)conn.close();
 		
 	}
 

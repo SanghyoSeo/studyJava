@@ -14,6 +14,9 @@ import com.jdbc.dto.주문VO;
 public class 주문DAO implements DAO<주문VO> {
 
 	private DataSource dataSource = DataSource.getInstance();
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
 	
 	@Override
 	public List<주문VO> selectList() throws Exception {
@@ -101,6 +104,14 @@ public class 주문DAO implements DAO<주문VO> {
 
 	@Override
 	public void delete(String id) throws Exception {
+		Connection conn = dataSource.getConnection();
+		String sql = "delete from 주문 where 주문번호='" + id + "'";
+		Statement stmt = conn.createStatement();
+		
+		stmt.executeUpdate(sql);
+		
+		if(stmt != null)stmt.close();
+		if(conn != null)conn.close();
 		
 	}
 
