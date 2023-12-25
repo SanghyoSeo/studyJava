@@ -7,59 +7,59 @@ public class Quiz2 {
 	public static void main(String[] args) {
 		
 		int computer = (int)(Math.random()*3);
-		String com_kwb = ""; // °¡À§ 0, ¹ÙÀ§ 1, º¸ 2
+		String com_kwb = ""; // ê°€ìœ„ 0 ë°”ìœ„ 1 ë³´ 2
 		
 		int player = 0;
-		String player_kwb = ""; // °¡À§ 0, ¹ÙÀ§ 1, º¸ 2
+		String player_kwb = ""; // ê°€ìœ„ 0 ë°”ìœ„ 1 ë³´ 2
 		
 		int menu = 0;
 		String juge = "";
 		
-		System.out.println("ÄÄÇ»ÅÍ´Â °áÁ¤Çß½À´Ï´Ù.");
-		System.out.println("´ç½ÅÀÇ ¼±ÅÃÀº?");
-		System.out.println("1.°¡À§ 2.¹ÙÀ§ 3.º¸");
-		System.out.print("¼±ÅÃ: ");
+		System.out.println("ï¿½ï¿½Ç»ï¿½Í´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?");
+		System.out.println("1.ê°€ìœ„ 2.ë°”ìœ„ 3.ë³´");
+		System.out.print("ì…ë ¥: ");
 		
 		Scanner scann = new Scanner(System.in);
 		menu = scann.nextInt();
 		player = menu - 1;
 		
-		if (computer == ((player+1)%3)) { //Á³¾î¿ä
-			juge = "Á³¾î¿ä";
+		if (computer == ((player+1)%3)) { //ï¿½ï¿½ï¿½ï¿½ï¿½
+			juge = "ì´ê¹€";
 		} else {
-			if (computer == player) { //ºñ°å¾î¿ä
-				juge = "ºñ°å¾î¿ä";
-			} else { //ÀÌ°å¾î¿ä
-				juge = "ÀÌ°å¾î¿ä";
+			if (computer == player) { //ï¿½ï¿½ï¿½ï¿½ï¿½
+				juge = "ë¹„ê¹€";
+			} else { //ï¿½Ì°ï¿½ï¿½ï¿½
+				juge = "ì§";
 			}
 		}
 		
 		switch (player) {
 		case 0:
-			player_kwb = "°¡À§";
+			player_kwb = "ê°€ìœ„";
 			break;
 		case 1:
-			player_kwb = "¹ÙÀ§";
+			player_kwb = "ë°”ìœ„";
 			break;
 		case 2:
-			player_kwb = "º¸";
+			player_kwb = "ë³´";
 			break;
 		}
 		
 		switch (computer) {
 		case 0:
-			com_kwb = "°¡À§";
+			com_kwb = "ê°€ìœ„";
 			break;
 		case 1:
-			com_kwb = "¹ÙÀ§";
+			com_kwb = "ë°”ìœ„";
 			break;
 		case 2:
-			com_kwb = "º¸";
+			com_kwb = "ë³´";
 			break;
 		}
 		
-		System.out.println("ÄÄÇ»ÅÍ : " + com_kwb);
-		System.out.println("´ç½Å : " + player_kwb);
+		System.out.println("ì»´í“¨í„° : " + com_kwb);
+		System.out.println("ë‚˜ : " + player_kwb);
 		
 		System.out.println(juge);
 		
