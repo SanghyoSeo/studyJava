@@ -11,7 +11,7 @@ public class Sosu {
 		int temp = 0;
 		boolean isSotsu = true;
 		
-		System.out.print("Á¤¼ö ÀÔ·Â : ");
+		System.out.print("ì •ìˆ˜ìž…ë ¥ : ");
 		temp = scann.nextInt();
 		
 		for(int i=2; i<temp; i++) {
@@ -21,9 +21,9 @@ public class Sosu {
 		}
 		
 		if(isSotsu) {
-			System.out.println("¼Ò¼öÀÔ´Ï´Ù.");
+			System.out.println("ì†Œìˆ˜ìž…ë‹ˆë‹¤.");
 		} else {
-			System.out.println("¼Ò¼ö°¡ ¾Æ´Õ´Ï´Ù.");
+			System.out.println("ì†Œìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 		}
 	}
 
