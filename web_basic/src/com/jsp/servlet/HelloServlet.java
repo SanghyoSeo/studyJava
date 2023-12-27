@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/hello.html")
+//@WebServlet("/hello.html")
 public class HelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,48 +18,18 @@ public class HelloServlet extends HttpServlet {
 //		http://localhost:80/contentPath/servletURL	?(구분자) key=value &(구분자)
 //							projectname / servlet / 변경가능 / parameter
 		
-		String message = request.getParameter("message");
-		String who = request.getParameter("who");
+//		String message = request.getParameter("message");
+//		String who = request.getParameter("who");
 		
-		System.out.println(message);
-		System.out.println(who);
+		request.setAttribute("method", "GET");
+		request.getRequestDispatcher("/WEB-INF/views/hello.jsp").forward(request, response);
 		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML>");
-		out.println("<html lang='ko'>");
-		out.println("<head>");
-		out.println("<title>Echo message</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<h1>method : GET</h1>");
-		out.println("<h1> To : " + who + "</h1>");
-		out.println("<h1> Message : " + message + "</h1>");
-		out.println("</body>");
-		out.println("</html>");
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String message = request.getParameter("message");
-		String who = request.getParameter("who");
-		
-		System.out.println(message);
-		System.out.println(who);
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML>");
-		out.println("<html lang='ko'>");
-		out.println("<head>");
-		out.println("<title>Echo message</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<h1>method : POST</h1>");
-		out.println("<h1> To : " + who + "</h1>");
-		out.println("<h1> Message : " + message + "</h1>");
-		out.println("</body>");
-		out.println("</html>");
+		request.setAttribute("method", "POST");
+		request.getRequestDispatcher("/WEB-INF/views/hello.jsp").forward(request, response);
 	}
 
 
